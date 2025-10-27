@@ -477,10 +477,9 @@
 <hr />
 <h2 id="autentikasi">🔐 Autentikasi<a class="headerlink" href="#autentikasi" title="Permanent link">&para;</a></h2>
 <p>Semua endpoint menggunakan header:
-```
-Authorization: Bearer <token>
-X-Request-Id: <uuid>
-```</p>
+<div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
+X-Request-Id: &lt;uuid&gt;
+</code></pre></div></p>
 <hr />
 <h2 id="endpoint-list">🧭 Endpoint List<a class="headerlink" href="#endpoint-list" title="Permanent link">&para;</a></h2>
 <table>
@@ -502,46 +501,44 @@ X-Request-Id: <uuid>
 <hr />
 <h2 id="contoh-payload">📦 Contoh Payload<a class="headerlink" href="#contoh-payload" title="Permanent link">&para;</a></h2>
 <p><strong>Request</strong>
-```json
-{
-    "kuitansi_id": "12171202510270001",
-    "kuitansi": "001-10-25-0006",
-    "userid": "2171",
-    "kode_kantor": "001",
-    "tgl_trans": "20251027",
-    "keterangan": "DROPPING KAS",
-    "transfer": 1,
-    "sub_kode_kantor": "",
-    "kode_kas": "",
-    "data_detail": [
-        {
-            "kode_perk": "10102",
-            "debet": "100000.00",
-            "kredit": "0",
-            "keterangan": "DROPPING KAS KREDIT"
-        },
-        {
-            "kode_perk": "10101",
-            "debet": "0",
-            "kredit": "100000.00",
-            "keterangan": "DROPPING KAS DEBET"
-        }
-    ],
-    "isBackDate": "0"
-}
-```</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;kuitansi_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12171202510270001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;kuitansi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001-10-25-0006&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2171&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;kode_kantor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tgl_trans&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20251027&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;keterangan&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPPING KAS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;transfer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sub_kode_kantor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;kode_kas&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;kode_perk&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10102&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;debet&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000.00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;kredit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;keterangan&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPPING KAS KREDIT&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;kode_perk&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10101&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;debet&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;kredit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000.00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;keterangan&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DROPPING KAS DEBET&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;isBackDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <p><strong>Response</strong>
-```json
-{
-    "response_code": "00",
-    "response_data": [
-        {
-            "TRANS_ID": 66495999
-        }
-    ],
-    "response_message": "SUKSES"
-}
-```</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;response_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;response_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;TRANS_ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">66495999</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;response_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SUKSES&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <h2 id="error-code">⚠️ Error Code<a class="headerlink" href="#error-code" title="Permanent link">&para;</a></h2>
 <table>
