@@ -13,10 +13,10 @@ Fitur ini digunakan untuk melakukan dropping kas dari Kas Besar (Kredit) ke Kas 
 
 ## 🔐 Autentikasi
 Semua endpoint menggunakan header:
-\`\`\`
+```
 Authorization: Bearer <token>
 X-Request-Id: <uuid>
-\`\`\`
+```
 
 ---
 
@@ -29,7 +29,7 @@ X-Request-Id: <uuid>
 
 ## 📦 Contoh Payload
 **Request**
-\`\`\`json
+```json
 {
     "kuitansi_id": "12171202510270001",
     "kuitansi": "001-10-25-0006",
@@ -56,10 +56,10 @@ X-Request-Id: <uuid>
     ],
     "isBackDate": "0"
 }
-\`\`\`
+```
 
 **Response**
-\`\`\`json
+```json
 {
     "response_code": "00",
     "response_data": [
@@ -69,7 +69,7 @@ X-Request-Id: <uuid>
     ],
     "response_message": "SUKSES"
 }
-\`\`\`
+```
 
 ---
 
