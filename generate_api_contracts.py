@@ -30,10 +30,10 @@ MODULE_TEMPLATE = r"""# API Contract — {name}
 
 ## 🔐 Autentikasi
 Semua endpoint menggunakan header:
-\`\`\`
+```
 Authorization: Bearer <token>
 X-Request-Id: <uuid>
-\`\`\`
+```
 
 ---
 
@@ -46,14 +46,14 @@ X-Request-Id: <uuid>
 
 ## 📦 Contoh Payload
 **Request**
-\`\`\`json
+```json
 {request_sample}
-\`\`\`
+```
 
 **Response**
-\`\`\`json
+```json
 {response_sample}
-\`\`\`
+```
 
 ---
 
