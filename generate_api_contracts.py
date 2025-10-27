@@ -59,9 +59,9 @@ Endpoint ini diamankan di level jaringan:
 ## ⚠️ Error Code
 | Code | Keterangan                 |
 |------|----------------------------|
+| 06   | Parse Error                |
 | 07   | Request body tidak lengkap |
 | 09   | Error Logic Business       |
-| 06   | Parse Error                |
 
 ---
 
