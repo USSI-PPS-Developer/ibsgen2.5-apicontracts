@@ -12,18 +12,17 @@ Fitur ini digunakan untuk melakukan dropping kas dari Kas Besar (Kredit) ke Kas 
 ---
 
 ## 🔐 Autentikasi
-Semua endpoint menggunakan header:
-```
-Authorization: Bearer <token>
-X-Request-Id: <uuid>
-```
+Endpoint ini diamankan di level jaringan:
+- Akses hanya dari jaringan internal melalui **VPN**.
+- **IP allowlist** diberlakukan di gateway/reverse proxy.
+- **Tidak diperlukan header `Authorization`** pada request.
 
 ---
 
 ## 🧭 Endpoint List
-| Method | Path | Deskripsi |
-|--------|------|-----------|
-| POST | `021101` | Untuk melakukan transaksi General Ledger (GL) |
+| Method | Path     | Deskripsi                                     |
+|--------|----------|-----------------------------------------------|
+| POST   | `021101` | Untuk melakukan transaksi General Ledger (GL) |
 
 ---
 
@@ -74,13 +73,11 @@ X-Request-Id: <uuid>
 ---
 
 ## ⚠️ Error Code
-| Code | Keterangan |
-|------|-------------|
-| 400 | Validasi gagal |
-| 401 | Unauthorized |
-| 404 | Data tidak ditemukan |
-| 409 | Conflict |
-| 500 | Server error |
+| Code | Keterangan                 |
+|------|----------------------------|
+| 07   | Request body tidak lengkap |
+| 09   | Error Logic Business       |
+| 06   | Parse Error                |
 
 ---
 
