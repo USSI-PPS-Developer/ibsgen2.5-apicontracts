@@ -1,7 +1,8 @@
 site_name: IBSGen 2.5 API Contracts
 site_description: Dokumentasi API Modular IBSGen 2.5 — PT USSI Pinbuk Prima Software
 site_author: PT USSI Pinbuk Prima Software
-site_url: https://<username>.github.io/<repo>/
+site_url: https://github.com/ussi-pps-developer/ibsgen2.5-apicontracts
+docs_dir: api-contracts
 
 theme:
   name: material
@@ -37,7 +38,7 @@ extra_css:
   - styles/syariah-green.css
 
 repo_name: PT-USSI-Pinbuk-Prima-Software/IBSGen2.5
-repo_url: https://github.com/<username>/<repo>
+repo_url: https://github.com/ussi-pps-developer/ibsgen2.5-apicontracts
 edit_uri: ""
 
 markdown_extensions:

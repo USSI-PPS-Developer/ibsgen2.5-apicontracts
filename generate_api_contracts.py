@@ -163,7 +163,7 @@ def main():
     config_path = CONFIG_FILE.resolve()
 
     if not config_path.exists():
-        print(color("❌ config.json tidak ditemukan!", "red"))
+        print(color("❌config.json tidak ditemukan!", "red"))
         return
 
     config = json.loads(config_path.read_text(encoding="utf-8"))
