@@ -3,7 +3,18 @@ name: 🚀 Build & Deploy IBSGen 2.5 Docs (MkDocs + Auto-Nav)
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'api-contracts/**/*.md'
+      - 'config.json'
+      - 'mkdocs.yml'
+      - 'styles/**'
+      - 'generate_*.py'
+      - 'Makefile'
   workflow_dispatch:
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-deploy:
@@ -16,11 +27,21 @@ jobs:
     steps:
       - name: 🧩 Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 🐍 Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: ♻️ Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt', 'mkdocs.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: ⚙️ Install dependencies
         run: |
@@ -28,18 +49,26 @@ jobs:
 
       - name: 📘 Generate API Markdown (fast)
         run: |
-          make docs-fast
+          if [ -f Makefile ]; then make docs-fast; else python3 generate_api_contracts.py --output ./api-contracts --no-summary; fi
 
       - name: 🧭 Auto-generate MkDocs navigation
         run: |
-          make docs-nav
+          if [ -f Makefile ]; then make docs-nav; else python3 generate_mkdocs_nav.py; fi
 
       - name: 🏗️ Build MkDocs site
         run: |
           mkdocs build -f mkdocs.yml -d site
+
+      - name: 📦 Upload site artifact (debug)
+        uses: actions/upload-artifact@v4
+        with:
+          name: mkdocs-site
+          path: site/
 
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
+          publish_branch: gh-pages
+          allow_empty_commit: true
