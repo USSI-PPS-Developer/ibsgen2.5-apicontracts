@@ -1,0 +1,52 @@
+{
+  "author": "PT Azharbyte Digital Teknologi",
+  "modules": [
+    {
+      "category": "Pengelolaan Kas",
+      "name": "Dropping Kas",
+      "description": "Fitur ini digunakan untuk melakukan dropping kas dari Kas Besar (Kredit) ke Kas Teller (Debet) secara otomatis.",
+      "endpoints": [
+        {
+          "method": "POST",
+          "path": "021101",
+          "desc": "Untuk melakukan transaksi General Ledger (GL)"
+        }
+      ],
+      "request_sample": {
+        "kuitansi_id": "12171202510270001",
+        "kuitansi": "001-10-25-0006",
+        "userid": "2171",
+        "kode_kantor": "001",
+        "tgl_trans": "20251027",
+        "keterangan": "DROPPING KAS",
+        "transfer": 1,
+        "sub_kode_kantor": "",
+        "kode_kas": "",
+        "data_detail": [
+          {
+            "kode_perk": "10102",
+            "debet": "100000.00",
+            "kredit": "0",
+            "keterangan": "DROPPING KAS KREDIT"
+          },
+          {
+            "kode_perk": "10101",
+            "debet": "0",
+            "kredit": "100000.00",
+            "keterangan": "DROPPING KAS DEBET"
+          }
+        ],
+        "isBackDate": "0"
+      },
+      "response_sample": {
+        "response_code": "00",
+        "response_data": [
+          {
+            "TRANS_ID": 66495999
+          }
+        ],
+        "response_message": "SUKSES"
+      }
+    }
+  ]
+}

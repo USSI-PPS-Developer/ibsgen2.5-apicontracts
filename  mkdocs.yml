@@ -1,0 +1,57 @@
+site_name: IBSGen 2.5 API Contracts
+site_description: Dokumentasi API Modular IBSGen 2.5 — PT USSI Pinbuk Prima Software
+site_author: PT USSI Pinbuk Prima Software
+site_url: https://<username>.github.io/<repo>/
+
+theme:
+  name: material
+  language: id
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    # 🌿 Syariah Green Theme
+    - scheme: default
+      primary: teal
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: "Switch to dark mode"
+    - scheme: slate
+      primary: light green
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: "Switch to light mode"
+  features:
+    - navigation.sections
+    - navigation.instant
+    - navigation.expand
+    - toc.integrate
+    - content.code.annotate
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - styles/syariah-green.css
+
+repo_name: PT-USSI-Pinbuk-Prima-Software/IBSGen2.5
+repo_url: https://github.com/<username>/<repo>
+edit_uri: ""
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+
+nav:
+  - Beranda: index.md
+  - Pengelolaan Kas:
+      - Dropping Kas: pengelolaan-kas/dropping-kas.md
