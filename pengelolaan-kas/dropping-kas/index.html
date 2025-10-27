@@ -476,10 +476,10 @@
 <p>Fitur ini digunakan untuk melakukan dropping kas dari Kas Besar (Kredit) ke Kas Teller (Debet) secara otomatis.</p>
 <hr />
 <h2 id="autentikasi">🔐 Autentikasi<a class="headerlink" href="#autentikasi" title="Permanent link">&para;</a></h2>
-<p>Semua endpoint menggunakan header:
-<div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
-X-Request-Id: &lt;uuid&gt;
-</code></pre></div></p>
+<p>Endpoint ini diamankan di level jaringan:
+- Akses hanya dari jaringan internal melalui <strong>VPN</strong>.
+- <strong>IP allowlist</strong> diberlakukan di gateway/reverse proxy.
+- <strong>Tidak diperlukan header <code>Authorization</code></strong> pada request.</p>
 <hr />
 <h2 id="endpoint-list">🧭 Endpoint List<a class="headerlink" href="#endpoint-list" title="Permanent link">&para;</a></h2>
 <table>
@@ -550,24 +550,16 @@ X-Request-Id: &lt;uuid&gt;
 </thead>
 <tbody>
 <tr>
-<td>400</td>
-<td>Validasi gagal</td>
+<td>07</td>
+<td>Request body tidak lengkap</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized</td>
+<td>09</td>
+<td>Error Logic Business</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Data tidak ditemukan</td>
-</tr>
-<tr>
-<td>409</td>
-<td>Conflict</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Server error</td>
+<td>06</td>
+<td>Parse Error</td>
 </tr>
 </tbody>
 </table>
